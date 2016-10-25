@@ -1,0 +1,11 @@
+[package]
+authors = ["Kenan Sulayman <kenan@sly.mn>"]
+name = "pwreddit"
+version = "0.1.0"
+
+[dependencies]
+eventsource = "0.1.0"
+hyper = "0.9.10"
+json = "0.10.2"
+regex = "0.1.77"
+telegram-bot = "0.4.2"
