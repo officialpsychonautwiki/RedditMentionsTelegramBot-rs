@@ -9,3 +9,22 @@ hyper = "0.9.10"
 json = "0.10.2"
 regex = "0.1.77"
 telegram-bot = "0.4.2"
+
+[profile]
+
+[profile.dev]
+codegen-units = 1
+debug = true
+debug-assertions = true
+lto = false
+opt-level = 0
+panic = "unwind"
+rpath = false
+
+[profile.release]
+debug = false
+debug-assertions = false
+lto = true
+opt-level = 3
+panic = "abort"
+rpath = false
