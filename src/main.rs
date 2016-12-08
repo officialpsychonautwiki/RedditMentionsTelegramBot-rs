@@ -37,7 +37,9 @@ fn main() {
                 r_linkid.by_ref().nth(2);
                 let link_id = r_linkid.as_str();
 
-                if !reddit_rgx.is_match(&linkstr) {
+                if evt["permalink"] != Null {
+                    format!("https://www.reddit.com{}", evt["permalink"].to_string())
+                } else if !reddit_rgx.is_match(&linkstr) {
                     format!("https://www.reddit.com/r/{}/comments/{}/_/{}/", evt["subreddit"], link_id, evt["id"])
                 } else {
                     format!("{}{}", evt["link_url"].to_string(), evt["link_id"].to_string())
