@@ -53,7 +53,7 @@ fn main() {
             };
 
             let msg = format!(
-                "User {:?} wrote into subreddit {:?} with title {:?}:\n\n» {} «\n\nPermalink: {}",
+                "User \"{}\" wrote into subreddit \"{}\" with title \"{}\":\n\n» {} «\n\nPermalink: {}",
                 evt["author"].to_string(),
                 evt["subreddit"].to_string(),
                 evt["link_title"].to_string(),
