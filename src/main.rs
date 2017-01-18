@@ -4,6 +4,12 @@ extern crate regex;
 extern crate telegram_bot;
 extern crate json;
 
+extern crate url;
+
+use url::percent_encoding::{
+    percent_encode, QUERY_ENCODE_SET
+};
+
 use hyper::Url;
 use regex::Regex;
 
@@ -57,7 +63,7 @@ fn main() {
 
             let _ = api.send_message(
                 -1001084499328 as i64,
-                msg.to_string(),
+                percent_encode(msg.as_bytes(), QUERY_ENCODE_SET).collect::<String>(),
                 None, None, None, None
             );
         }
