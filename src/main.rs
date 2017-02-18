@@ -17,9 +17,9 @@ use json::JsonValue::Null;
 
 fn main() {
     let re = [
-        Regex::new(r"psychonaut\s?wiki").unwrap(),
-        Regex::new(r"psychonaut.?wiki").unwrap(),
-        Regex::new(r"disregard\s?everything\s?i\s?say").unwrap()
+        Regex::new(r"(?i)psychonaut\s?wiki").unwrap(),
+        Regex::new(r"(?i)psychonaut.?wiki").unwrap(),
+        Regex::new(r"(?i)disregard\s?everything\s?i\s?say").unwrap()
     ];
 
     let reddit_rgx = Regex::new(r"www.reddit.com").unwrap();
